@@ -4,6 +4,50 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
+var bodyParser = require('body-parser');
+var cors = require('cors');
+
+ var expressJwt = require('express-jwt');
+ var  passport = require('passport');
+ //var logger=require('./config/logger');
+ var userRoutes=require('./routes/usersRoutes.js');
+ var expressValidator = require('express-validator');
+ app.use(expressValidator());
+//passport Strategy
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cors({
+    exposedHeaders : ['x-auth-token']
+ }));
+
+app.use('/api',userRoutes);
+ //var User = app.models.user
+ //console.log(User);
+
+//app.use('/api',userRoutes);
+app.use(function(req, res, next){
+  res.status(404);
+  if (req.accepts('json')) {
+    res.send({ error: 'Not found' });
+    return;
+  }
+
+  // default to plain-text. send()
+  res.type('txt').send('Not found');
+});
+app.use(function (err,req,res,next) {
+    //logger.error(err.stack);
+    res.status(500).send( {
+    err: 'something blew up'
+  });
+})
+
+
+
+//app.post('/auth/facebook',passport.authenticate('facebook-token', {session: false}),userController.signInWithFacebook);
+
 
 app.start = function() {
   // start the web server

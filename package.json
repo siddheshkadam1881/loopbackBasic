@@ -8,18 +8,27 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/src/app/shared/sdk"
   },
   "dependencies": {
+    "@mean-expert/loopback-sdk-builder": "^2.3.1",
+    "@types/socket.io-client": "^1.4.32",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
+    "express-jwt": "^5.3.1",
+    "express-validator": "^5.2.0",
     "helmet": "^3.10.0",
     "loopback": "^3.19.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.0.0",
+    "loopback-component-passport": "^3.8.1",
     "loopback-component-storage": "^3.3.1",
     "loopback-component-storage-mongo": "^1.5.1",
     "loopback-connector-mongodb": "^1.18.1",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-facebook-token": "^3.3.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0"
   },
