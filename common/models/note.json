@@ -17,14 +17,14 @@
   },
   "validations": [],
   "relations": {
-    "label": {
-      "type": "belongsTo",
-      "model": "label",
-      "foreignKey": ""
-    },
     "User": {
       "type": "belongsTo",
       "model": "User",
+      "foreignKey": ""
+    },
+    "label": {
+      "type": "belongsTo",
+      "model": "label",
       "foreignKey": ""
     }
   },

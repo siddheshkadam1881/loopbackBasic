@@ -42,5 +42,9 @@
   "label": {
     "dataSource": "db",
     "public": true
+  },
+  "Container": {
+    "dataSource": "local-storage",
+    "public": true
   }
 }
