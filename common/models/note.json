@@ -1,0 +1,33 @@
+{
+  "name": "Note",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "User": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": ""
+    },
+    "label": {
+      "type": "belongsTo",
+      "model": "label",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
