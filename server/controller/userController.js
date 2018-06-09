@@ -5,7 +5,12 @@ var  passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var FacebookTokenStrategy = require('passport-facebook-token');
 //var fbConfig = require('../config/auth');
-
+var loopback = require('loopback');
+var boot = require('loopback-boot');
+var app=require('../server');
+ // var User = app.models.user;
+ // console.log(User);
+// console.log( "user model show here" ,User);
 
 /***
 * @description Class signInWithFacebook use for login fb user
@@ -15,7 +20,7 @@ var FacebookTokenStrategy = require('passport-facebook-token');
 
 exports.facebookLogin = function (req,res) {
 //console.log("hii");
- console.log(req.user);
+ //console.log(req.user);
   var user = req.user;
   if (user) {
       var token = userService.generateJwt({ email: user.email, fullName: user.username, mobile: user.usermobile,_id: user._id});

@@ -37,6 +37,7 @@ app.use(cors({
  loopback.User.defineProperty('DOB', { type: Date });
  loopback.User.defineProperty('role', { type: String });
 
+ // app.use(User);
 
 //  var appModels = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role','Note','label'];
 //  var ds = app.dataSources.db;

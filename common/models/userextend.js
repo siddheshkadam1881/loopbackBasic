@@ -1,5 +1,5 @@
-'use strict';
-
-module.exports = function(Userextend) {
-
-};
+// 'use strict';
+//
+// module.exports = function(Userextend) {
+//
+// };

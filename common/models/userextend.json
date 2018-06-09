@@ -1,4 +1,4 @@
-{
+ {
   "name": "Userextend",
   "base": "User",
   "idInjection": true,

@@ -11,7 +11,10 @@ var FacebookTokenStrategy = require('passport-facebook-token');
 var passport = require('passport');
 var passport = userController.passport;
 var secretConfig = require('../config/config');
-
+// var loopback = require('loopback');
+// var boot = require('loopback-boot');
+// var app = module.exports = loopback();
+// var User = app.models.User;
 /*
  *  Redirect the user to Facebook for authentication.  When complete,
  *   Facebook will redirect the user back to the application at
@@ -21,7 +24,7 @@ var secretConfig = require('../config/config');
  *   different scopes while logging in
 */
 
-router.post('/auth/facebook',passport.authenticate('facebook-token', {session: false}),userController.facebookLogin);
+// router.post('/auth/facebook',passport.authenticate('facebook-token', {session: false}),userController.facebookLogin)
 
   /*
   * token handling middleware

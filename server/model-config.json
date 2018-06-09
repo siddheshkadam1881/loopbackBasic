@@ -14,8 +14,7 @@
     ]
   },
   "User": {
-    "dataSource": "db",
-    "public": false
+    "dataSource": "db"
   },
   "AccessToken": {
     "dataSource": "db",
@@ -46,10 +45,6 @@
   },
   "Container": {
     "dataSource": "local-storage",
-    "public": true
-  },
-  "Userextend": {
-    "dataSource": "db",
     "public": true
   }
 }
