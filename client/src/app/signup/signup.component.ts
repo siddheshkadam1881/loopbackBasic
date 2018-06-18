@@ -10,7 +10,7 @@ import {Subject} from 'rxjs/Subject';
 import { NgForm } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Http ,HttpModule} from '@angular/http'
-//import { BackendApiService } from '../services/backend-api.service';
+import { RestbackendApiService } from './restbackend-api.service';
 import { ViewContainerRef} from '@angular/core';
 // import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { ISubscription } from "rxjs/Subscription";
@@ -38,7 +38,7 @@ export class SignupComponent  {
   hide = true;
   //declare object of FormControl for email validator
   email = new FormControl('', [Validators.required, Validators.email]);
-  constructor(fb: FormBuilder ,private route: ActivatedRoute, private router: Router )
+  constructor(fb: FormBuilder ,private route: ActivatedRoute, private router: Router,private commonService:RestbackendApiService )
    {
      //this.toastr.setRootViewContainerRef(vcr);
      this.options = fb.group
@@ -52,5 +52,15 @@ export class SignupComponent  {
    this.email.hasError('email') ? 'Not a valid email' :
            '';
   }
+
+  registerUser(data) {
+            //console.log(this.currentItem);
+            this.commonService.postServiceData('signup',data)
+                              .subscribe(data => {
+                                                  this.router.navigate(['/signin']);
+                                        });
+           }
+
+
 
 }

@@ -19,6 +19,8 @@ import { MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup.component';
+//import { BackendApiService } from './services/backend-api.service';
+import { RestbackendApiService } from './services/restbackend-api.service';
 
 
 export function getAuthHttp(http: Http) {
@@ -93,9 +95,8 @@ const routes: Routes = [
 
   ],
   providers: [
-    UserService, { provide: AuthHttp, useFactory: getAuthHttp, deps: [Http] }
-
-
+    UserService, { provide: AuthHttp, useFactory: getAuthHttp, deps: [Http] },
+    RestbackendApiService
   ],
   bootstrap: [AppComponent]
 })
