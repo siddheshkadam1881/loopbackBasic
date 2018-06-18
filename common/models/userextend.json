@@ -1,0 +1,23 @@
+ {
+  "name": "Userextend",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "DOB": {
+      "type": "date"
+    },
+    "MobileNumber": {
+      "type": "number"
+    },
+    "Role": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

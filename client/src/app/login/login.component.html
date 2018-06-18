@@ -1,0 +1,97 @@
+<div fxLayout="row" style="height:70px; margin-top:15px; background:SILVER" fxLayoutAlign="center center">
+  <div fxFlex="50">
+  </div>
+  <div fxFlex="30" fxLayoutAlign="center center">
+    <h1><strong>FUNDOO APP</strong></h1>
+  </div>
+  <div fxFlex="40" fxLayoutAlign="center center">
+    <img style="width:50px;" src="assets/icon/bridgelabz.png">
+  </div>
+</div>
+  <form class="form"  fxLayout="column"  fxLayoutAlign="auto"  #signInForm="ngForm" (ngSubmit)="signInForm.form.valid && signInUser(signInForm.value)">
+
+  <div>
+       <mat-form-field class="full_width">
+         <input matInput placeholder="Enter your email" type="email"  name="email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  ngModel required />
+         <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field class="full_width">
+       <input matInput placeholder="Enter your password"  type="password" name="userpass" [type]="hide ? 'password' : 'text'" ngModel required />
+       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+     </mat-form-field>
+  </div>
+
+      <div class="Signbutton" fxLayoutAlign="center center" >
+         <button mat-button mat-raised-button color="primary" >Sign In</button>
+     </div>
+     <div class="Signbutton">
+         <!-- <button class="loginBtn loginBtn--facebook"  (click)="fbLogin()">Login with Facebook</button>
+         <button class="loginBtn loginBtn--google"> Login with Google </button> -->
+     </div>
+     <div>
+           <a [routerLink]="['/signup']" style=" padding-left: 330px;">if u dont have account?</a>
+     </div>
+      <div>
+          <a [routerLink]="['/forget']" style=" padding-left: 330px;">forget password?</a>
+      </div>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <form class="form"  fxLayout="column" fxFlexAlign="auto" #signInForm="ngForm" (ngSubmit)="signInForm.form.valid && signInUser(signInForm.value)">
+   <div>
+     <mat-form-field class="full_width">
+       <input matInput placeholder="Enter your email" type="email"  name="email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  ngModel required />
+       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+     </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full_width">
+       <input matInput placeholder="Enter your password"  type="password" name="userpass" [type]="hide ? 'password' : 'text'" ngModel required />
+       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+     </mat-form-field>
+    </div>
+       <div class="Signbutton">
+        <button mat-button mat-raised-button color="primary" >Sign In</button>
+      </div>
+       <div class="Signbutton">
+         <button class="loginBtn loginBtn--facebook"  (click)="fbLogin()">
+    Login with Facebook
+  </button>
+
+  <button class="loginBtn loginBtn--google">
+    Login with Google
+  </button>
+     </div>
+      <div>
+        <a [routerLink]="['/signup']" style=" padding-left: 330px;">if u dont have account?</a>
+      </div>
+      <div >
+        <a [routerLink]="['/forget']" style=" padding-left: 330px;">forget password?</a>
+      </div>
+      </form> -->
